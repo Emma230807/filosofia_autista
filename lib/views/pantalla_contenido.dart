@@ -22,11 +22,14 @@ class PantallaContenido extends StatelessWidget {
             const SizedBox(height: 12),
             // Misma imagen representativa que la tarjeta de origen.
 
-            Image.asset(
-              filosofo.imagen,
-              width: 400,
-              height: 400,
-              fit: BoxFit.contain,
+            Hero(
+              tag: filosofo.nombre,
+              child: Image.asset(
+                filosofo.imagen,
+                width: 400,
+                height: 400,
+                fit: BoxFit.contain,
+              ),
             ),
 
             const SizedBox(height: 20),

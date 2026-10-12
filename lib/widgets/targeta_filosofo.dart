@@ -1,3 +1,4 @@
+import 'package:filosofia_autista/datasources/filosofos.dart';
 import 'package:filosofia_autista/models/filosofo.dart';
 import 'package:filosofia_autista/views/pantalla_contenido.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,11 @@ class TarjetaFilosofo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      clipBehavior: Clip.antiAlias, // recorta el InkWell a las esquinas
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(color: filosofo.color, width: 2),
+      ),
       child: InkWell(
         onTap: () {
           Navigator.push(
@@ -29,9 +33,8 @@ class TarjetaFilosofo extends StatelessWidget {
             children: [
               // "Imagen representativa": un ícono dentro de un círculo
               // de color. No necesita archivos ni internet.
-              CircleAvatar(
-                radius: 30,
-                backgroundColor: filosofo.color,
+              Hero(
+                tag: filosofo.nombre,
                 child: Image.asset(
                   filosofo.imagen,
                   width: 60,
