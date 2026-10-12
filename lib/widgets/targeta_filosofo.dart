@@ -1,4 +1,3 @@
-import 'package:filosofia_autista/datasources/filosofos.dart';
 import 'package:filosofia_autista/models/filosofo.dart';
 import 'package:filosofia_autista/views/pantalla_contenido.dart';
 import 'package:flutter/material.dart';
